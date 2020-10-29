@@ -113,6 +113,8 @@ done
 
 ## Exercice 2
   SplitStrip
+  
+  ### Question 1
 ```shell
 #!/bin/bash
 Folder="Data";
@@ -130,4 +132,12 @@ echo $Folder/data."$i" ;
 done;
 ```
   
+  ### Question 2
+  
+  ```shell
+  #!bin/bash
+for i in ./Data/data*; do
+ cat $i >> ./Data/result;
+done
+```
   
