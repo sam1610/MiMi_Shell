@@ -21,7 +21,7 @@ exo1/  exo2/  exo3/
 Ouvrez le fichier cesar.c contenu dans le répertoire exo1 et étudiez-le. Que fait-il ?
 
 cat cesar.c
- 
+```c
 #include<stdlib.h>
 #include<stdio.h>
  
@@ -45,7 +45,7 @@ printf("%c", c);
  
 return 0;
 }
-
+```
 
 Le programme verifie l'existance d’un paramètre au niveau de la structure conditionnelle et arrête l'exécution si le paramètre manque. 
 Sinon, le programme lira le contenu d’une chaine, caractère par caractère et vérifie si chaque caractère est un alphabet minuscule, ensuite il effectue un décalage d’un certain nombre de  places défini par la variable "cle" qui est l'argument  passe lors de l execution du programme, 
@@ -67,9 +67,9 @@ Yes i will,  , you mean  drop th image?  Or just right what I got ?
 
 ###Question 4
 Le répertoire fenetre_sur_coquillage contient un texte chiffré par décalage, puis fragmenté en plu- sieurs fichiers. En essayant tous les décalages possibles sur le premier fragment part1, trouvez la clé de déchiffrement.
-
+```shell
 cat  part1  |   ../cesar 16
-
+```
 - output
 >  Lo Bkcr m'ocd wêwo cyec Wsxnygc !!!
 Le Bash c'est même sous Windows !!!
@@ -79,11 +79,12 @@ Le Bash c'est même sous Windows !!!
 
 ### Question 5
 Maintenant que vous avez récupéré la clé, utilisez-la pour déchiffrer l’ensemble des fichiers et concaténez les résultats dans un même fichier news.txt qui contiendra tout le texte en clair.
+```shell
 for i in {1..9}; 
 do 
- cat ./fenetre_sur_coquillage/part"$i" |.  ../cesar 16  >> news.txt; 
+ cat ./fenetre_sur_coquillage/part"$i" |  ../cesar 16  >> news.txt; 
 done
-
+```
 
  output 
   Le Bash c'est même sous Windows !!!
@@ -100,17 +101,33 @@ intégrant Bash.
 
 
 Une autre solution :
+```shell
  for i in ./fenetre_sur_coquillage/part*;
 do
   ./cesar 16 < $i  >>  news.txt;
 done
-
+```
 
 
 
 
 ## Exercice 2
   SplitStrip
-  
+```shell
+#!/bin/bash
+Folder="Data";
+FILE=data"$i";
+if [ ! -d $Folder ]; then
+   mkdir $Folder;
+fi
+
+for  i in 0{0..3};do
+echo $i;
+echo $Folder/data."$i" ;
+ if [ ! -f $Folder/data."$i" ]; then
+         wget  http://julien.sopena.fr/chunks/data."$i" && mv  ./data."$i"   ./$Forder ;
+ fi
+done;
+```
   
   
