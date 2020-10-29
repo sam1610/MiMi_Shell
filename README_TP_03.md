@@ -81,7 +81,7 @@ Le Bash c'est même sous Windows !!!
 Maintenant que vous avez récupéré la clé, utilisez-la pour déchiffrer l’ensemble des fichiers et concaténez les résultats dans un même fichier news.txt qui contiendra tout le texte en clair.
 for i in {1..9}; 
 do 
- cat part"$i" |.  ../cesar 16  >> news.txt; 
+ cat ./fenetre_sur_coquillage/part"$i" |.  ../cesar 16  >> news.txt; 
 done
 
 
@@ -98,3 +98,19 @@ voir ce mécanisme comme une émulation du
 activé, on a accès à plusieurs distributions
 intégrant Bash.
 
+
+Une autre solution :
+ for i in ./fenetre_sur_coquillage/part*;
+do
+  ./cesar 16 < $i  >>  news.txt;
+done
+
+
+
+
+
+## Exercice 2
+  SplitStrip
+  
+  
+  
