@@ -58,6 +58,8 @@ Sinon, le programme lira le contenu d’une chaine, caractère par caractère et
 Testez-le après l’avoir compilé. Pour quitter le programme, il faut simuler une fin de fichier en combinant les touches Ctrl+d.
 gcc    cesar  
 ./cesar  1
+
+
 abcd
 Output :   bcde
 Papa in the readme file, put the execution you did with the parameter and show the output you got in the console.
@@ -66,8 +68,12 @@ Yes i will,  , you mean  drop th image?  Or just right what I got ?
 ###Question 4
 Le répertoire fenetre_sur_coquillage contient un texte chiffré par décalage, puis fragmenté en plu- sieurs fichiers. En essayant tous les décalages possibles sur le premier fragment part1, trouvez la clé de déchiffrement.
 
-Cat  part1
+cat  part1  |   ../cesar 16
+
+- output
 >  Lo Bkcr m'ocd wêwo cyec Wsxnygc !!!
+Le Bash c'est même sous Windows !!!
+
 
 >  la cle = 16
 
@@ -75,5 +81,20 @@ Cat  part1
 Maintenant que vous avez récupéré la clé, utilisez-la pour déchiffrer l’ensemble des fichiers et concaténez les résultats dans un même fichier news.txt qui contiendra tout le texte en clair.
 for i in {1..9}; 
 do 
-echo cat part"$i"* >> news.txt; 
+ cat part"$i" |.  ../cesar 16  >> news.txt; 
 done
+
+
+ output 
+  Le Bash c'est même sous Windows !!!
+Grâce à Windows Subsystem for Linux (wsl),
+Le Bash c'est même sous Windows !!!
+Grâce à Windows Subsystem for Linux (wsl),
+il est aujourd'hui possible d'exécuter des
+exécutables binaires Linux (au format ELF)
+de manière native sur Windows 10. On peut
+voir ce mécanisme comme une émulation du 
+"mode user" d'un système gnu-Linux. Une fois
+activé, on a accès à plusieurs distributions
+intégrant Bash.
+
