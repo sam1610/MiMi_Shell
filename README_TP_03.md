@@ -239,13 +239,13 @@ $ ls sélection/
 ```shell
 $ ./select.sh
 ```
- - Affichage : les noms du dossier d'origine et du dossier destination devraient être fournis
+ - Affichage : les noms du dossier d'origine et celui de la destination devraient être fournis
  
  > exécution avec noms de dossiers inéxistants
  ```shell
  $ ./select.sh  dossier1 dossier2
  ```
-  l'un des dossiers ou bien les deux dossier ne figure(nt) pas au sein du repertoire en cours
+  l'un des dossiers ou bien les deux  ne figure(nt) pas au sein du repertoire en cours
 
 
 
