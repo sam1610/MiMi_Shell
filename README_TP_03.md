@@ -10,8 +10,10 @@ http ://julien.sopena.fr/LU2IN020-TP_03.tgz
 Yes, take the link put open it in the directory called TP3
 
 ### Question 1
-!wget http://julien.sopena.fr/LU2IN020-TP_03.tgz
-!tar  -xvzf LU2IN020-TP_02.tgz
+```shell
+wget http://julien.sopena.fr/LU2IN020-TP_03.tgz
+tar  -xvzf LU2IN020-TP_02.tgz
+```
 
 ls
 exo1/  exo2/  exo3/
@@ -19,8 +21,9 @@ exo1/  exo2/  exo3/
 
 ### Question 2
 Ouvrez le fichier cesar.c contenu dans le répertoire exo1 et étudiez-le. Que fait-il ?
-
+```shell
 cat cesar.c
+```
 ```c
 #include<stdlib.h>
 #include<stdio.h>
@@ -56,7 +59,9 @@ Sinon, le programme lira le contenu d’une chaine, caractère par caractère et
 ### Question 3
 
 Testez-le après l’avoir compilé. Pour quitter le programme, il faut simuler une fin de fichier en combinant les touches Ctrl+d.
+```shell
 gcc    cesar  
+```
 ./cesar  1
 
 
@@ -194,3 +199,47 @@ fi
 
 - $ bash   biggest.sh    ./dico
   - Le plus gros fichier est :  185 ./dico/bien
+
+### Question 3
+```shell
+ mkdir sélection
+```
+
+__select.sh
+```shell
+#!/bin/bash
+# Vérificaiton de l'exisytance du  nom du dossier comme paramètre
+if [ -z  $1  ] ||  [ -z $2 ] ; then
+  echo " les noms du dossier d'origine et du dossier destination devraient être fournis"; exit -1;
+else
+   if  [  ! -d  $1 ]  && [ ! -d $2 ]; then
+        echo  "  l'un des dossiers ou bien les deux dossier ne figure(nt) pas au sein du repertoire en cours "; exit -1;
+   else
+         mv $(find $1 -type f -printf " %p\n" | sort -rn | head -n 4)   $2;
+   fi
+
+fi
+
+```
+
+> exécution  avec  paramètres
+$ ./select.sh ./dico_copie/  ./sélection/
+
+> vérification 
+```shell
+$ ls sélection/
+```
+- Affichage  vouloir  vous  y  yeux
+
+> exécution sans paramètres
+```shell
+$ ./select.sh
+```
+ - Affichage : les noms du dossier d'origine et du dossier destination devraient être fournis
+ 
+ > exécution avec noms de dossiers inéxistants
+ ```shell
+ $ ./select.sh  dossier1 dossier2
+ ```
+  l'un des dossiers ou bien les deux dossier ne figure(nt) pas au sein du repertoire en cours
+
