@@ -180,7 +180,7 @@ else
         echo  "  le dossier   $1  n'exixte pas "; exit -1;
    else
    #  retenir seulement le fichier le plus Gros et afficher son nom
-         echo "Le plus gros fichier est : " $(find $1/ -type f -printf "%s %p\n" | sort -rn | head -n 1);
+         echo "Le plus gros fichier est : " $(find $1 -type f -printf "%p\n" | sort -rn | head -n 1);
    fi
 
 fi
