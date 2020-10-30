@@ -118,7 +118,6 @@ done
 ```shell
 #!/bin/bash
 Folder="Data";
-FILE=data"$i";
 if [ ! -d $Folder ]; then
    mkdir $Folder;
 fi
