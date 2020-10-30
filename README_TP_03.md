@@ -124,10 +124,8 @@ if [ ! -d $Folder ]; then
 fi
 
 for  i in 0{0..3};do
-echo $i;
-echo $Folder/data."$i" ;
  if [ ! -f $Folder/data."$i" ]; then
-         wget  http://julien.sopena.fr/chunks/data."$i" && mv  ./data."$i"   ./$Forder ;
+         wget  http://julien.sopena.fr/chunks/data."$i"  -P ./data."$i"   ./$Forder ||  break;
  fi
 done;
 ```
