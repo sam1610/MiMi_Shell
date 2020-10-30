@@ -122,9 +122,9 @@ if [ ! -d $Folder ]; then
    mkdir $Folder;
 fi
 
-for  i in 0{0..3};do
+for  i in 0{0..99};do
  if [ ! -f $Folder/data."$i" ]; then
-         wget  http://julien.sopena.fr/chunks/data."$i"  -P ./data."$i"   ./$Forder ||  break;
+         wget  http://julien.sopena.fr/chunks/data."$i"  -P ./$Forder/ ||  break;
  fi
 done;
 ```
