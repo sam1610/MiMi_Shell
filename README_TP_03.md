@@ -229,7 +229,11 @@ $ ./select.sh ./dico_copie/  ./sélection/
 ```shell
 $ ls sélection/
 ```
-- Affichage:   vouloir  vous  y  yeux
+- Affichage:   
+  vouloir  
+  vous  
+  y  
+  yeux
 
 > exécution sans paramètres
 ```shell
@@ -251,4 +255,8 @@ Vérification du contenu du dossier ./sélection
 ```shell
 ls ./sélection
 ```
-- Affichage :   - Affichage:   vouloir  vous  y  yeux
+- Affichage :   
+    vouloir  
+    vous  
+    y  
+    yeux
