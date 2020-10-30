@@ -124,7 +124,9 @@ fi
 
 for  i in 0{0..99};do
  if [ ! -f $Folder/data."$i" ]; then
-         wget  http://julien.sopena.fr/chunks/data."$i"  -P ./$Forder/ ||  break;
+     if [  !  wget  http://julien.sopena.fr/chunks/data."$i"  -P ./$Forder/] ; then  
+          break;
+     fi
  fi
 done;
 ```
