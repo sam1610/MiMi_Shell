@@ -188,9 +188,9 @@ fi
 ```
 >  execution  :
 - $ bash   biggest.sh    ./dd
-  le dossier   ./dd  n'exixte pas
+  - le dossier   ./dd  n'exixte pas
 - $ bash   biggest.sh
- pas de paramètre fourni
+ - pas de paramètre fourni
 
 - $ bash   biggest.sh    ./dico
-Le plus gros fichier est :  185 ./dico/bien
+ - Le plus gros fichier est :  185 ./dico/bien
