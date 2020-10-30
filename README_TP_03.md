@@ -229,7 +229,7 @@ $ ./select.sh ./dico_copie/  ./sélection/
 ```shell
 $ ls sélection/
 ```
-- Affichage  vouloir  vous  y  yeux
+- Affichage:   vouloir  vous  y  yeux
 
 > exécution sans paramètres
 ```shell
@@ -243,3 +243,12 @@ $ ./select.sh
  ```
   l'un des dossiers ou bien les deux dossier ne figure(nt) pas au sein du repertoire en cours
 
+
+
+### Question 4
+
+Vérification du contenu du dossier ./sélection
+```shell
+ls ./sélection
+```
+- Affichage :   - Affichage:   vouloir  vous  y  yeux
