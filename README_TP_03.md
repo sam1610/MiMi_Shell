@@ -141,9 +141,11 @@ done
  ### Question 3
  
  ```shell 
-
+  file result
 ```
-  
+  - output: 
+  result: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=0], baseline, precision 8, 650x897, components 3
+
   
   
 ## Exercice 3
