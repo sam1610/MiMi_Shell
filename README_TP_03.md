@@ -140,3 +140,23 @@ for i in ./Data/data*; do
 done
 ```
   
+ ### Question 3
+ 
+ ```shell 
+
+```
+  
+  
+  
+## Exercice 3
+### Qyestion 1
+commande proposée
+```shell
+ wc -c < fichier
+```
+// Afficher le nombre de caractère du fichier test
+```shell
+ wc -c < test
+```
+-Affiche: 42
+
