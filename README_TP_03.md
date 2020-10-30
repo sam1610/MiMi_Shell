@@ -130,7 +130,7 @@ done;
 ```
   
   ### Question 2
-  
+  > concatiner tous les fichier  data.xx au sein d'un seul fichier  result
   ```shell
   #!bin/bash
 for i in ./Data/data*; do
@@ -140,14 +140,18 @@ done
   
  ### Question 3
  
+ > Afficher le type du fichier binaire
  ```shell 
   file result
 ```
   - output: 
   result: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=0], baseline, precision 8, 650x897, components 3
 
+  > renommer lte fichier
   
-  
+  ```shell 
+  mv result  image.jpg
+```
 ## Exercice 3
 ### Qyestion 1
 commande proposée
