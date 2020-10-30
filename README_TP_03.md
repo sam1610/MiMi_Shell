@@ -164,3 +164,33 @@ commande proposée
 ```
 -Affiche: 42
 
+
+
+### Question 2
+>  Afficher le plus gros fichier du repertoir, 
+
+```shell
+#!/bin/bash
+# Vérificaiton de l'exisytance du  nom du dossier comme paramètre
+if [ -z  $1 ] ; then
+  echo " pas de paramètre fourni"; exit -1;
+else
+# vérification de l'existance du dossie précisé au niveau du paramètre
+   if  [  ! -d  $1 ]; then
+        echo  "  le dossier   $1  n'exixte pas "; exit -1;
+   else
+   #  retenir seulement le fichier le plus Gros et afficher son nom
+         echo "Le plus gros fichier est : " $(find $1/ -type f -printf "%s %p\n" | sort -rn >
+   fi
+
+fi
+
+```
+>  execution  :
+- $ bash   biggest.sh    ./dd
+  le dossier   ./dd  n'exixte pas
+- $ bash   biggest.sh
+ pas de paramètre fourni
+
+- $ bash   biggest.sh    ./dico
+Le plus gros fichier est :  185 ./dico/bien
