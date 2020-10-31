@@ -1,0 +1,26 @@
+(* This is an OCaml editor.
+   Enter your program here and send it to the toplevel using the "Eval code"
+   button. *)
+(* Question 1*)
+
+type bit = bool 
+type duet = bool*bool
+type quartet = bool*bool*bool*bool
+
+
+(* Question 2*)
+
+let xor (a:bit)(b:bit): bit = (not a && b ) || (a && not b);;  
+
+xor  true false;;
+
+(*Question 3*)
+
+let half_adder(a:bit)(b:bit):duet =( (xor a b ), (a&&b) ) ;;
+half_adder true true;;
+
+(*Question 4*) 
+
+let adder(a:bit)(b:bit)(c:bit):duet = let (s1, r1)= half_adder a b in 
+  let (s2, r2) = half_adder c s1 in  (s2, r1||r2);;
+adder true false true;;
