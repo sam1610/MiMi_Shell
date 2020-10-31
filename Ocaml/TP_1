@@ -22,5 +22,20 @@ half_adder true true;;
 (*Question 4*) 
 
 let adder(a:bit)(b:bit)(c:bit):duet = let (s1, r1)= half_adder a b in 
-  let (s2, r2) = half_adder c s1 in  (s2, r1||r2);;
+  let (s2, r2) = half_adder c s1 in  
+  (s2, r1||r2);;
 adder true false true;;
+
+(*Question 5*)
+let _= assert(( adder true true true)=(true, true))
+
+(*Question 6*)
+
+let duet_adder((a, b) : duet)((c,d):duet)(e:bit):(duet*bit) =
+  let (s1,r1)=  adder b d e in  
+  let (s2, r2)= adder  a c r1 in
+  ((s1, s2), r2);; 
+
+let _ =assert((duet_adder (true ,true) (true ,false) true)  =((false,true), true) )
+  
+  
