@@ -27,7 +27,7 @@ let adder(a:bit)(b:bit)(c:bit):duet = let (s1, r1)= half_adder a b in
 adder true false true;;
 
 (*Question 5*)
-let _= assert(( adder true true true)=(true, true))
+let _= assert(( adder true true true)=(true, true));;
 
 (*Question 6*)
 
@@ -37,8 +37,8 @@ let duet_adder((a, b) : duet)((c,d):duet)(e:bit):(duet*bit) =
   ((s1, s2), r2);; 
 
 let _ =assert((duet_adder (true ,true) (true ,false) true)  =((false,true), true) )
-  
 
+               
 (* Question 7 *) 
 let quartet_adder ((a, b, c,d): quartet) ((e,f,g,h):quartet) (k:bit):
   (quartet*bit) = 
@@ -57,5 +57,9 @@ let _ =assert(
      (true ,false, false, true) true) =
   ((false,true, false, false), true))
   
-  
- (* Question   8 *)
+(* Question 8 *)
+let f (a:int): bit = if a=0 then false else true ;; 
+let to_quartet (a:int) : quartet = 
+  let s1 =(a mod 2) and  s2= (a/2)  mod 2 and s3=(a/4) mod 2 and s4= (a/8) mod 2 in 
+  (f s4, f s3, f s2, f s1);;
+to_quartet 11 ;;
