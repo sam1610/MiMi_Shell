@@ -38,4 +38,24 @@ let duet_adder((a, b) : duet)((c,d):duet)(e:bit):(duet*bit) =
 
 let _ =assert((duet_adder (true ,true) (true ,false) true)  =((false,true), true) )
   
+
+(* Question 7 *) 
+let quartet_adder ((a, b, c,d): quartet) ((e,f,g,h):quartet) (k:bit):
+  (quartet*bit) = 
+  let ((s1, s2), r1)= (duet_adder (c,d) (g,h) k ) in 
+  let ((s3, s4), r2) = (duet_adder (a,b) (e,f) r1) in 
+  ((s4, s3, s2, s1) , r2) ;; 
+(*   1010  
+     1001   
+        1 
+_________________
+=  10100    
+      s1=0, s2=0, s3=1,  s4=0   r2=1*)
+   
+let _ =assert(
+  (quartet_adder (true ,false, true, false) 
+     (true ,false, false, true) true) =
+  ((false,true, false, false), true))
   
+  
+ (* Question   8 *)
